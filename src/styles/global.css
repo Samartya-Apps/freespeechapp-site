@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* ─── Brand design tokens ─────────────────────────────────────────── */
+@theme {
+  --color-teal:        #4ECDC4;
+  --color-teal-dark:   #3AB8B0;
+  --color-text-dark:   #2D2D2D;
+  --color-pink-tile:   #F4A7B9;
+  --color-yellow-tile: #F5E682;
+
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body:    'Open Sans', sans-serif;
+}
+
+/* ─── Base ────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: #fff;
+  /* teal dot-grid background */
+  background-image: radial-gradient(circle, #4ECDC4 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+}
+
+/* ─── Typography helpers ──────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+}
+
+.teal-italic {
+  color: var(--color-teal);
+  font-style: italic;
+  font-family: var(--font-body);
+}
+
+/* ─── Focus ring (keyboard accessible) ───────────────────────────── */
+:focus-visible {
+  outline: 3px solid var(--color-teal);
+  outline-offset: 3px;
+}
+
+/* ─── Reduce-motion guard ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Scroll-indicator animation ─────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  .scroll-mouse {
+    animation: scrollBounce 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+/* ─── Prose (blog) ────────────────────────────────────────────────── */
+.prose {
+  max-width: 72ch;
+  line-height: 1.75;
+}
+.prose h2 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.25rem; }
+.prose p  { margin-bottom: 1.25rem; }

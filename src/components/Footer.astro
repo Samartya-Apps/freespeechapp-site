@@ -1,0 +1,75 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[#2D2D2D] text-white mt-20" style="font-family:'Open Sans',sans-serif;">
+  <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <div>
+      <p class="text-lg font-bold uppercase tracking-wider mb-3" style="font-family:'Montserrat',sans-serif; color:#4ECDC4;">
+        Avaz FreeSpeech
+      </p>
+      <p class="text-sm text-gray-400 leading-relaxed">
+        An app that turns children's thoughts into accurate sentences through interactive picture tiles.
+      </p>
+    </div>
+
+    <nav aria-label="Footer navigation">
+      <p class="text-sm font-semibold uppercase tracking-wider mb-3 text-gray-300" style="font-family:'Montserrat',sans-serif;">
+        Navigate
+      </p>
+      <ul class="space-y-2 list-none p-0 m-0" role="list">
+        {[
+          { label: 'Home',        href: '/' },
+          { label: 'Common Core', href: '/common-core' },
+          { label: 'Blog',        href: '/blog' },
+          { label: 'FAQ',         href: '/faq' },
+        ].map(({ label, href }) => (
+          <li>
+            <a
+              href={href}
+              class="text-sm text-gray-400 hover:text-[#4ECDC4] transition-colors"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-wider mb-3 text-gray-300" style="font-family:'Montserrat',sans-serif;">
+        Connect
+      </p>
+      <ul class="space-y-2 list-none p-0 m-0" role="list">
+        <li>
+          <a
+            href="https://twitter.com/avazapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-400 hover:text-[#4ECDC4] transition-colors"
+          >
+            Twitter / X
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://apps.apple.com/app/avaz-freespeech/id6474038890"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-gray-400 hover:text-[#4ECDC4] transition-colors"
+          >
+            App Store
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="border-t border-gray-700">
+    <p class="text-center text-xs text-gray-500 py-4">
+      &copy; {year} Samartya. All rights reserved.
+    </p>
+  </div>
+</footer>

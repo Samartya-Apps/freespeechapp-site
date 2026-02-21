@@ -1,0 +1,26 @@
+[
+  {
+    "q": "What age group is Avaz FreeSpeech designed for?",
+    "a": "FreeSpeech is primarily designed for children aged 4–12 who are learning English grammar, including those with language disabilities such as autism spectrum disorder, Down syndrome, or developmental language disorder. The picture-tile approach makes it accessible to pre-literate learners as well."
+  },
+  {
+    "q": "Does the app work offline?",
+    "a": "Yes. Once downloaded, the core app and its default vocabulary library work fully offline. An internet connection is only needed to sync custom vocabulary sets or to access any future cloud-based features."
+  },
+  {
+    "q": "How does FreeSpeech differ from other AAC apps?",
+    "a": "Most AAC apps focus on communication — helping children express immediate needs. FreeSpeech focuses on language learning: it teaches children the structure of grammar so they can compose original, grammatically correct sentences. Think of it as a language tutor built into a picture-communication system."
+  },
+  {
+    "q": "Can speech therapists customise the vocabulary?",
+    "a": "Absolutely. Therapists and parents can upload custom images and label them with any word, allowing the vocabulary to reflect topics that are meaningful to each child — family members, favourite foods, classroom objects, and more."
+  },
+  {
+    "q": "Is FreeSpeech aligned to educational standards?",
+    "a": "Yes. Activities are aligned to Common Core Language Arts standards for Kindergarten through Grade 2 (and beyond). See our Common Core page for a detailed breakdown of the standards each activity addresses."
+  },
+  {
+    "q": "What devices does FreeSpeech support?",
+    "a": "FreeSpeech is available for iPad and iPhone running iOS 15 or later. It is optimised for iPad for the best experience."
+  }
+]

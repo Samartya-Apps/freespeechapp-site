@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const standards = [
+  {
+    code: 'CCSS.ELA-LITERACY.L.K.1',
+    title: 'Kindergarten: Sentence Structure',
+    body: 'Demonstrate command of the conventions of standard English grammar and usage when writing or speaking. FreeSpeech tiles guide children to place subjects, verbs, and objects in the correct order.',
+  },
+  {
+    code: 'CCSS.ELA-LITERACY.L.1.1',
+    title: 'Grade 1: Parts of Speech',
+    body: 'Print all upper- and lowercase letters; use common, proper, and possessive nouns; use singular and plural nouns. The vocabulary library covers all these categories with labelled picture tiles.',
+  },
+  {
+    code: 'CCSS.ELA-LITERACY.L.2.1',
+    title: 'Grade 2: Expanded Sentences',
+    body: 'Use collective nouns; form and use frequently occurring irregular plural nouns; use reflexive pronouns. Sentence-building activities progressively increase in complexity to meet Grade 2 demands.',
+  },
+  {
+    code: 'CCSS.ELA-LITERACY.SL.1.4',
+    title: 'Grade 1: Speaking & Listening',
+    body: 'Describe people, places, things, and events with relevant details, expressing ideas and feelings clearly. FreeSpeech\'s text-to-speech feature lets children hear their composed sentences aloud.',
+  },
+];
+---
+
+<BaseLayout
+  title="Common Core Alignment"
+  description="How Avaz FreeSpeech maps to Common Core Language Arts standards for kindergarten through Grade 2."
+>
+  <section class="py-20 px-6 max-w-4xl mx-auto" aria-labelledby="cc-page-heading">
+    <h1
+      id="cc-page-heading"
+      class="text-4xl font-extrabold uppercase tracking-wider mb-6"
+      style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
+    >
+      Common Core Alignment
+    </h1>
+
+    <p
+      class="teal-italic text-xl mb-10"
+    >
+      Structured activities designed around proven language-learning benchmarks
+    </p>
+
+    <p class="text-base leading-relaxed mb-14" style="color:#555;">
+      Avaz FreeSpeech was designed in close collaboration with educators and speech-language
+      pathologists to ensure every activity supports — rather than supplements — the Common
+      Core State Standards for English Language Arts. Below you'll find the specific
+      standards our activities address, along with how the app meets each one.
+    </p>
+
+    <div class="grid gap-6">
+      {standards.map(({ code, title, body }) => (
+        <article
+          class="bg-white rounded-2xl p-6 shadow-md border-l-4"
+          style="border-color:#4ECDC4;"
+        >
+          <p
+            class="text-xs font-bold uppercase tracking-widest mb-1"
+            style="color:#4ECDC4; font-family:'Montserrat',sans-serif;"
+          >
+            {code}
+          </p>
+          <h2
+            class="text-lg font-bold uppercase tracking-wide mb-3"
+            style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
+          >
+            {title}
+          </h2>
+          <p class="text-sm leading-relaxed" style="color:#555;">{body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
