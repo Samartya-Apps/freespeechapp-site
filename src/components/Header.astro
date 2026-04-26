@@ -1,0 +1,114 @@
+---
+// Header.astro
+---
+<header class="header">
+  <div class="container header-container">
+    <div class="logo">
+      <a href="/" class="logo-link">
+        <img src="/img/freespeech-icon.png" alt="FreeSpeech Logo" width="40" height="40" />
+        <span class="logo-text">FreeSpeech</span>
+      </a>
+    </div>
+    
+    <nav class="nav">
+      <div class="dropdown">
+        <button class="nav-link dropdown-toggle">Download ▾</button>
+        <div class="dropdown-menu">
+          <a href="#download" class="dropdown-item">iOS</a>
+          <a href="#download" class="dropdown-item">Android</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: var(--color-bg-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    text-decoration: none;
+    color: var(--color-text-main);
+  }
+  
+  .logo-text {
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--color-primary-dark);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-base);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family-body);
+    padding: var(--spacing-2);
+  }
+
+  .nav-link:hover {
+    color: var(--color-primary);
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--color-bg-surface);
+    min-width: 160px;
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .dropdown-item {
+    color: var(--color-text-main);
+    padding: var(--spacing-3) var(--spacing-4);
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: var(--transition-base);
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--color-bg-alt);
+    color: var(--color-primary);
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+</style>

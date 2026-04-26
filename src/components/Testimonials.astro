@@ -1,0 +1,84 @@
+---
+// Testimonials.astro
+const testimonials = [
+  {
+    quote: "I use this with my kids who have language disorders and this app goes very far in helping them expand their language. I love it and it is a very well designed app! Well worth any price!",
+    author: "Speech-Language Pathologist"
+  },
+  {
+    quote: "Language structure made visual. What a wonderful way to help kids really 'see' language structure.",
+    author: "Educator"
+  },
+  {
+    quote: "It is probably the only app I've seen that actually makes it fun and stress-free to work with English sentences.",
+    author: "Therapist"
+  },
+  {
+    quote: "My son has autism and struggles with sentence structure. This app has been a game changer for his therapy sessions. He actually enjoys building sentences now.",
+    author: "Parent"
+  }
+];
+---
+<section class="testimonials section section-light">
+  <div class="container">
+    <h2 class="text-center section-title">What therapists, teachers, and parents say.</h2>
+    
+    <div class="testimonials-grid">
+      {testimonials.map(t => (
+        <div class="testimonial-card card">
+          <div class="quote-mark">"</div>
+          <p class="quote-text">{t.quote}</p>
+          <p class="quote-author">— {t.author}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    margin-bottom: var(--spacing-12);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .testimonial-card {
+    position: relative;
+    padding-top: var(--spacing-10);
+  }
+
+  .quote-mark {
+    position: absolute;
+    top: var(--spacing-4);
+    left: var(--spacing-6);
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--color-primary-light);
+    font-family: serif;
+  }
+
+  .quote-text {
+    font-size: 1.125rem;
+    color: var(--color-text-main);
+    font-style: italic;
+    margin-bottom: var(--spacing-6);
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-author {
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

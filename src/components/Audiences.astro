@@ -1,0 +1,77 @@
+---
+// Audiences.astro
+const audiences = [
+  {
+    title: "Children with Autism & Language Disorders",
+    text: "Many children with autism understand far more than they can express. FreeSpeech gives them a way to build complex sentences they couldn't produce through speech or writing alone — revealing a language ability that was always there, just waiting for the right tool."
+  },
+  {
+    title: "Children Who Are Deaf or Hard of Hearing",
+    text: "English grammar and ASL grammar are structurally different. FreeSpeech represents English grammar visually, allowing Deaf students to learn English literacy without filtering through spoken language first."
+  },
+  {
+    title: "English Language Learners",
+    text: "FreeSpeech's picture-based system works independently of the child's first language. Students explore how English grammar works by seeing and manipulating it — not by translating from another language."
+  },
+  {
+    title: "Speech-Language Pathologists & Therapists",
+    text: "FreeSpeech fits into your clinical workflow. Create challenges aligned to IEP grammar goals. Adjust scaffolding per student. Use it in individual or group sessions. The app does the grammar; you do the therapy."
+  }
+];
+---
+<section class="audiences section section-alt">
+  <div class="container">
+    <div class="audiences-header">
+      <h2>Made for the people who never give up on a child's voice.</h2>
+    </div>
+    
+    <div class="audiences-grid">
+      {audiences.map(aud => (
+        <div class="audience-card card">
+          <h3>{aud.title}</h3>
+          <p>{aud.text}</p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center" style="margin-top: var(--spacing-12);">
+      <a href="https://samartya.com/for-schools" class="btn btn-outline" target="_blank" rel="noopener noreferrer">See how schools use FreeSpeech →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .audiences-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-16);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .audiences-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .audience-card h3 {
+    color: var(--color-primary-dark);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-4);
+  }
+
+  .audience-card p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .audiences-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

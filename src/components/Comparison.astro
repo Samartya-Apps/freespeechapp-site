@@ -1,0 +1,96 @@
+---
+// Comparison.astro
+---
+<section class="comparison section section-light">
+  <div class="container">
+    <div class="comparison-card card">
+      <h2>FreeSpeech is not an AAC app. Here's the difference.</h2>
+      
+      <div class="comparison-body">
+        <p>
+          People sometimes ask how FreeSpeech compares to AAC (augmentative and alternative communication) apps like Proloquo2Go or TouchChat. The answer: they solve different problems.
+        </p>
+        
+        <div class="comparison-columns">
+          <div class="col">
+            <h3>AAC Apps</h3>
+            <p>
+              AAC apps help children who cannot speak to communicate in the moment — selecting pictures or symbols to express immediate needs and thoughts. They're essential communication tools.
+            </p>
+          </div>
+          
+          <div class="col">
+            <h3>FreeSpeech</h3>
+            <p>
+              FreeSpeech is a <strong>language learning</strong> tool. It teaches the <em>structure</em> of language — grammar, sentence building, tense, word order — through visual manipulation. The goal isn't to replace speech in the moment, but to build the underlying language competence that supports speech, writing, and reading over time.
+            </p>
+          </div>
+        </div>
+        
+        <p class="comparison-footer">
+          Many therapists use both: an AAC app for daily communication and FreeSpeech for language therapy sessions focused on grammar goals.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .comparison-card {
+    background-color: var(--color-bg-base);
+    border-color: var(--color-primary-light);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-8);
+  }
+
+  .comparison-body > p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-8);
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+  }
+
+  .comparison-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-8);
+  }
+
+  .col {
+    background: var(--color-bg-surface);
+    padding: var(--spacing-6);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+  }
+
+  .col h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .col p {
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+  }
+
+  .comparison-footer {
+    text-align: center;
+    font-weight: 500;
+    color: var(--color-text-main);
+    background-color: var(--color-primary-light);
+    padding: var(--spacing-4);
+    border-radius: var(--border-radius-md);
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .comparison-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

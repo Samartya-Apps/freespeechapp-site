@@ -1,0 +1,123 @@
+---
+// AhaMoment.astro
+---
+
+<section class="aha-moment section section-alt">
+  <div class="container aha-grid">
+    <div class="aha-content">
+      <h2>Watch what happens when you change one picture.</h2>
+
+      <div class="aha-body">
+        <p>
+          This is the moment that makes FreeSpeech different from every other
+          language app.
+        </p>
+
+        <p>A child has built a sentence: <strong>"I eat lunch."</strong></p>
+
+        <p>
+          Now they drag the "he" tile to replace "I." Instantly, the sentence
+          becomes <strong>"He eats lunch."</strong> The child didn't learn a rule
+          about third-person singular conjugation. They <em>saw</em> it happen.
+        </p>
+
+        <p>
+          They drag the "past" marker onto the grid. The sentence becomes <strong
+            >"He ate lunch."</strong
+          > Irregular past tense — one of the hardest things to teach — demonstrated
+          in a single gesture.
+        </p>
+
+        <p class="highlight">
+          This is what we mean by "grammar made visible." The child isn't
+          memorizing rules. They're discovering patterns by playing with
+          pictures.
+        </p>
+      </div>
+    </div>
+
+    <div class="aha-visual">
+      <div class="media-placeholder">
+        <div class="media-content">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            ></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Before/After Transformation Graphic</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .aha-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-6);
+  }
+
+  .aha-body p {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-4);
+  }
+
+  .aha-body strong {
+    color: var(--color-primary-dark);
+  }
+
+  .aha-body .highlight {
+    margin-top: var(--spacing-6);
+    font-weight: 600;
+    color: var(--color-text-main);
+    border-left: 4px solid var(--color-primary);
+    padding-left: var(--spacing-4);
+  }
+
+  .media-placeholder {
+    aspect-ratio: 1/1;
+    background-color: var(--color-bg-surface);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+  }
+
+  .media-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    text-align: center;
+    padding: var(--spacing-4);
+  }
+
+  @media (max-width: 992px) {
+    .aha-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .aha-visual {
+      order: -1;
+    }
+  }
+</style>

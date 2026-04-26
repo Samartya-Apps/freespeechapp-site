@@ -1,0 +1,272 @@
+---
+// Pricing.astro
+---
+<section class="pricing section section-alt">
+  <div class="container">
+    <div class="pricing-header text-center">
+      <h2>Free to try. Built to be affordable.</h2>
+      <p>FreeSpeech is free to download with a full 14-day trial. After the trial, choose the plan that fits.</p>
+      
+      <div class="currency-toggle">
+        <span class="toggle-label" id="label-usd">USD</span>
+        <button class="toggle-btn" id="currency-toggle-btn" aria-label="Toggle currency">
+          <div class="toggle-slider"></div>
+        </button>
+        <span class="toggle-label" id="label-inr">INR</span>
+      </div>
+    </div>
+    
+    <div class="pricing-grid">
+      <!-- Monthly Plan -->
+      <div class="pricing-card card">
+        <h3>Monthly</h3>
+        <div class="price">
+          <span class="price-value" data-usd="$9.99" data-inr="₹99">$9.99</span>
+          <span class="price-period">/month</span>
+        </div>
+        <ul class="features-list">
+          <li>Full access to all features</li>
+          <li>Unlimited profiles</li>
+          <li>All vocabulary levels</li>
+          <li>Cancel anytime</li>
+        </ul>
+      </div>
+      
+      <!-- Annual Plan -->
+      <div class="pricing-card card popular">
+        <div class="popular-badge">Most Popular</div>
+        <h3>Annual</h3>
+        <div class="price">
+          <span class="price-value" data-usd="$99.99" data-inr="₹999">$99.99</span>
+          <span class="price-period">/year</span>
+        </div>
+        <ul class="features-list">
+          <li>Full access to all features</li>
+          <li>Unlimited profiles</li>
+          <li>All vocabulary levels</li>
+          <li>Save ~15% vs monthly</li>
+        </ul>
+      </div>
+      
+      <!-- Lifetime Plan -->
+      <div class="pricing-card card">
+        <h3>Lifetime</h3>
+        <div class="price">
+          <span class="price-value" data-usd="$199.99" data-inr="₹1999">$199.99</span>
+          <span class="price-period">one-time</span>
+        </div>
+        <ul class="features-list">
+          <li>Pay once, own forever</li>
+          <li>All future updates included</li>
+          <li>Unlimited profiles</li>
+          <li>Best value long-term</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="schools-pricing card">
+      <div class="schools-content">
+        <h3>For Schools & Districts</h3>
+        <p>Lifetime licenses are available through Apple's Volume Purchase Program (VPP) with 50% off for purchases of 20 or more licenses. We also support purchase orders and institutional invoicing.</p>
+        <a href="https://samartya.com/for-schools" class="btn btn-primary" target="_blank" rel="noopener noreferrer">See school pricing & request a free evaluation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .pricing-header {
+    max-width: 600px;
+    margin: 0 auto var(--spacing-12);
+  }
+
+  .pricing-header p {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-6);
+  }
+
+  .currency-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+  }
+
+  .toggle-label {
+    font-weight: 600;
+    color: var(--color-text-muted);
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-label.active {
+    color: var(--color-primary-dark);
+  }
+
+  .toggle-btn {
+    width: 60px;
+    height: 32px;
+    background-color: var(--color-primary);
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    padding: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .toggle-slider {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  /* When INR is active, move slider right */
+  .toggle-btn.inr-active .toggle-slider {
+    transform: translateX(28px);
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-6);
+    margin-bottom: var(--spacing-12);
+  }
+
+  .pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 2px solid transparent;
+  }
+
+  .pricing-card.popular {
+    border-color: var(--color-primary);
+    transform: scale(1.05);
+    z-index: 1;
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 16px;
+    white-space: nowrap;
+  }
+
+  .pricing-card h3 {
+    margin-bottom: var(--spacing-4);
+    color: var(--color-text-muted);
+    font-size: 1.25rem;
+  }
+
+  .price {
+    margin-bottom: var(--spacing-6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price-value {
+    font-size: 3rem;
+    font-weight: 800;
+    font-family: var(--font-family-heading);
+    color: var(--color-text-main);
+    line-height: 1;
+  }
+
+  .price-period {
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+
+  .features-list {
+    margin-bottom: var(--spacing-8);
+    flex-grow: 1;
+  }
+
+  .features-list li {
+    padding: var(--spacing-2) 0;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .features-list li:last-child {
+    border-bottom: none;
+  }
+
+  .schools-pricing {
+    background-color: var(--color-bg-base);
+    text-align: center;
+  }
+
+  .schools-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .schools-content h3 {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .schools-content p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-6);
+  }
+
+  @media (max-width: 992px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      gap: var(--spacing-8);
+    }
+    
+    .pricing-card.popular {
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Simple Vanilla JS toggle for currency
+  const toggleBtn = document.getElementById('currency-toggle-btn');
+  const labelUsd = document.getElementById('label-usd');
+  const labelInr = document.getElementById('label-inr');
+  const priceValues = document.querySelectorAll('.price-value');
+
+  let isINR = false;
+
+  // Set initial state
+  labelUsd.classList.add('active');
+
+  toggleBtn?.addEventListener('click', () => {
+    isINR = !isINR;
+    
+    if (isINR) {
+      toggleBtn.classList.add('inr-active');
+      labelUsd.classList.remove('active');
+      labelInr.classList.add('active');
+      
+      priceValues.forEach(el => {
+        el.textContent = el.getAttribute('data-inr');
+      });
+    } else {
+      toggleBtn.classList.remove('inr-active');
+      labelInr.classList.remove('active');
+      labelUsd.classList.add('active');
+      
+      priceValues.forEach(el => {
+        el.textContent = el.getAttribute('data-usd');
+      });
+    }
+  });
+</script>

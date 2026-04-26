@@ -1,0 +1,100 @@
+---
+// Solution.astro
+---
+
+<section class="solution section section-alt">
+  <div class="container">
+    <h2 class="text-center section-title">
+      FreeSpeech makes the invisible rules of language visible.
+    </h2>
+
+    <div class="solution-grid">
+      <div class="solution-card card">
+        <div class="icon-wrapper">
+          <span class="icon">🧩</span>
+        </div>
+        <h3>Pictures, not rules.</h3>
+        <p>
+          Every word is a picture. Every grammatical relationship — tense,
+          number, person, sentence type — is a visual property on a grid.
+          Children manipulate language the same way they'd arrange blocks: by
+          seeing and touching.
+        </p>
+      </div>
+
+      <div class="solution-card card">
+        <div class="icon-wrapper">
+          <span class="icon">✨</span>
+        </div>
+        <h3>Instant, correct sentences.</h3>
+        <p>
+          FreeSpeech doesn't just let children arrange pictures — it understands
+          the grammar behind the arrangement. Swap "I" for "he" and watch "eat"
+          become "eats" automatically. The child sees cause and effect, not a
+          rule to memorize.
+        </p>
+      </div>
+
+      <div class="solution-card card">
+        <div class="icon-wrapper">
+          <span class="icon">🔊</span>
+        </div>
+        <h3>Spoken aloud.</h3>
+        <p>
+          Every sentence is spoken in a clear, natural voice. The child hears
+          their own thought — assembled from pictures — expressed as real
+          language. That moment is powerful.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    margin-bottom: var(--spacing-16);
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .solution-card {
+    text-align: center;
+    padding: var(--spacing-12) var(--spacing-8);
+  }
+
+  .icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--border-radius-full);
+    background-color: var(--color-primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-6);
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .solution-card h3 {
+    margin-bottom: var(--spacing-4);
+  }
+
+  .solution-card p {
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 768px) {
+    .solution-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

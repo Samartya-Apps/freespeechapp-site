@@ -1,22 +1,54 @@
-@import "tailwindcss";
+:root {
+  /* Brand Colors drawn from Logo */
+  --color-primary: #4ECDC4; /* Teal */
+  --color-primary-dark: #3BB5AC;
+  --color-primary-light: #E6F8F7;
+  --color-accent: #FFD93D; /* Vibrant Yellow */
+  --color-accent-dark: #E6C230;
+  --color-accent-orange: #FF8A5B; /* New Orange */
+  --color-accent-alt: #F4A7B9; /* Pink */
+  
+  --color-text-main: #2C3539; 
+  --color-text-muted: #5E6A70;
+  --color-text-light: #ffffff;
+  
+  --color-bg-base: #FAFAF9;
+  --color-bg-surface: #ffffff;
+  --color-bg-alt: #F3F4F6;
+  
+  --color-border: #E5E7EB;
+  
+  /* Typography */
+  --font-family-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-heading: 'Outfit', system-ui, -apple-system, sans-serif;
 
-/* ─── Brand design tokens ─────────────────────────────────────────── */
-@theme {
-  --color-teal:        #4ECDC4;
-  --color-teal-dark:   #3AB8B0;
-  --color-text-dark:   #2D2D2D;
-  --color-pink-tile:   #F4A7B9;
-  --color-yellow-tile: #F5E682;
+  /* Sizing / Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --spacing-24: 6rem;
 
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body:    'Open Sans', sans-serif;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  --transition-base: all 0.2s ease-in-out;
 }
 
-/* ─── Base ────────────────────────────────────────────────────────── */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -24,61 +56,129 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  color: var(--color-text-dark);
-  background-color: #fff;
-  /* teal dot-grid background */
-  background-image: radial-gradient(circle, #4ECDC4 1px, transparent 1px);
-  background-size: 28px 28px;
-  background-attachment: fixed;
+  font-family: var(--font-family-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ─── Typography helpers ──────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--color-text-dark);
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text-main);
+  margin-bottom: var(--spacing-4);
 }
 
-.teal-italic {
-  color: var(--color-teal);
-  font-style: italic;
-  font-family: var(--font-body);
+h1 { font-size: 3rem; letter-spacing: -0.025em; }
+h2 { font-size: 2.25rem; letter-spacing: -0.015em; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.875rem; }
+  h3 { font-size: 1.5rem; }
 }
 
-/* ─── Focus ring (keyboard accessible) ───────────────────────────── */
-:focus-visible {
-  outline: 3px solid var(--color-teal);
-  outline-offset: 3px;
+p {
+  margin-bottom: var(--spacing-4);
 }
 
-/* ─── Reduce-motion guard ─────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: var(--transition-base);
 }
 
-/* ─── Scroll-indicator animation ─────────────────────────────────── */
-@media (prefers-reduced-motion: no-preference) {
-  .scroll-mouse {
-    animation: scrollBounce 1.4s ease-in-out infinite;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(8px); }
+ul {
+  list-style: none;
 }
 
-/* ─── Prose (blog) ────────────────────────────────────────────────── */
-.prose {
-  max-width: 72ch;
-  line-height: 1.75;
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
-.prose h2 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.25rem; }
-.prose p  { margin-bottom: 1.25rem; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+/* Utilities */
+.text-center { text-align: center; }
+.section { padding: var(--spacing-16) 0; }
+.section-light { background-color: var(--color-bg-surface); }
+.section-alt { background-color: var(--color-bg-alt); }
+.section-dark { background-color: var(--color-text-main); color: var(--color-bg-surface); }
+.section-dark h1, .section-dark h2, .section-dark h3 { color: var(--color-bg-surface); }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3) var(--spacing-6);
+  font-family: var(--font-family-body);
+  font-weight: 600;
+  border-radius: var(--border-radius-full);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-base);
+  text-decoration: none !important;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--color-accent);
+  color: var(--color-text-main);
+}
+.btn-secondary:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary-dark);
+  border: 2px solid var(--color-primary);
+}
+.btn-outline:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Card */
+.card {
+  background: var(--color-bg-surface);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  transition: var(--transition-base);
+}
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}

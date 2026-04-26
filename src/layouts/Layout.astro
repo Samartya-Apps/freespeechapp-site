@@ -1,0 +1,85 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+
+const canonicalURL = "https://freespeechapp.com";
+const schemaMarkup = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "FreeSpeech",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "EducationApplication",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free 14-day trial"
+    },
+    {
+      "@type": "Offer",
+      "price": "9.99",
+      "priceCurrency": "USD",
+      "description": "Monthly subscription"
+    },
+    {
+      "@type": "Offer",
+      "price": "99.99",
+      "priceCurrency": "USD",
+      "description": "Annual subscription"
+    }
+  ],
+  "author": {
+    "@type": "Organization",
+    "name": "Samartya Apps",
+    "url": "https://samartya.com"
+  }
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" href="/img/freespeech-icon.png" />
+		<meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+
+    <!-- SEO Meta Tags -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={`${canonicalURL}/img/og-image.jpg`} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${canonicalURL}/img/og-image.jpg`} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaMarkup)} />
+
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>

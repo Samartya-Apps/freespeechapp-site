@@ -1,0 +1,140 @@
+---
+// FAQ.astro
+const faqs = [
+  {
+    q: "What age range is FreeSpeech designed for?",
+    a: "FreeSpeech is used with children from age 4 through to teenagers, and even adults. The adjustable vocabulary levels and scaffolding settings allow it to serve a wide range of language abilities. Most commonly, it's used with children ages 5–14 in speech therapy and special education settings."
+  },
+  {
+    q: "Does my child need to know how to read to use FreeSpeech?",
+    a: "No. FreeSpeech is picture-based — children interact with visual tiles, not text. The app speaks the sentences aloud, so reading ability is not a prerequisite. As the child progresses, they begin to associate the pictures with written words naturally."
+  },
+  {
+    q: "Is this an AAC app?",
+    a: "No. AAC apps (like Proloquo2Go or Avaz AAC) help non-speaking children communicate in the moment. FreeSpeech is a language learning tool that teaches grammar and sentence structure. Many therapists use both — an AAC app for daily communication and FreeSpeech for grammar intervention."
+  },
+  {
+    q: "Can I use FreeSpeech in therapy sessions?",
+    a: "Absolutely — that's what it's designed for. You can create custom challenge sets aligned to IEP goals, adjust vocabulary and scaffolding levels per student, and review completed work. FreeSpeech fits naturally into individual and group therapy sessions targeting grammar objectives."
+  },
+  {
+    q: "What devices does FreeSpeech work on?",
+    a: "FreeSpeech is available on iPad and iPhone (iOS) and Android tablets and phones. It works offline after download."
+  },
+  {
+    q: "Does FreeSpeech support languages other than English?",
+    a: "Yes. FreeSpeech can generate sentences in English, Spanish, and Arabic. The visual grammar system is language-independent at its core — the same picture arrangement produces correct grammar in each supported language."
+  },
+  {
+    q: "How much does it cost?",
+    a: "Free to download and try for 14 days. Plans start at $9.99/month, with annual and lifetime options. Schools get 50% off lifetime licenses through Apple VPP for 20+ licenses."
+  },
+  {
+    q: "What's the relationship between FreeSpeech and Avaz?",
+    a: "FreeSpeech was originally developed by Avaz Inc. as \"Avaz FreeSpeech.\" In 2025, it was acquired by Samartya Apps, which now develops and supports it. The same team and research vision continue under the Samartya Apps brand. Avaz Inc. continues to develop Avaz AAC, which is a separate product."
+  },
+  {
+    q: "Is FreeSpeech backed by research?",
+    a: "Yes. FreeSpeech's visual grammar system is based on original research into how the brain processes language, and was the subject of a TED talk viewed over 1 million times. Its creator was named an MIT Technology Review TR35 innovator. <a href='https://samartya.com/research' target='_blank'>Learn more about the research →</a>"
+  }
+];
+---
+<section class="faq section section-light">
+  <div class="container">
+    <h2 class="text-center section-title">Common questions.</h2>
+    
+    <div class="faq-container">
+      {faqs.map(faq => (
+        <details class="faq-item">
+          <summary class="faq-question">
+            {faq.q}
+            <span class="icon"></span>
+          </summary>
+          <div class="faq-answer">
+            <p set:html={faq.a}></p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    margin-bottom: var(--spacing-12);
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background-color: var(--color-bg-base);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-4);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    cursor: pointer;
+    position: relative;
+    list-style: none; /* Hide default triangle */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question:hover {
+    background-color: var(--color-bg-alt);
+  }
+
+  .icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .icon::before, .icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--color-primary);
+    transition: transform 0.3s ease;
+  }
+
+  .icon::before {
+    top: 9px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+  }
+
+  .icon::after {
+    top: 0;
+    left: 9px;
+    width: 2px;
+    height: 20px;
+  }
+
+  details[open] .icon::after {
+    transform: rotate(90deg);
+  }
+
+  .faq-answer {
+    padding: 0 var(--spacing-6) var(--spacing-4);
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+</style>

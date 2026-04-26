@@ -1,0 +1,80 @@
+---
+// Features.astro
+const features = [
+  { icon: "🧩", title: "Picture-Based Sentence Building", text: "Drag and drop picture tiles onto a visual grid. FreeSpeech handles the grammar automatically." },
+  { icon: "🎯", title: "Therapy Challenges", text: "Create custom challenge sets aligned to IEP goals. Assign them to students. Review their completed sentences." },
+  { icon: "📊", title: "Adjustable Scaffolding", text: "Control how much grammatical support the app provides — from fully guided sentence frames to open-ended creation. Reduce scaffolding as the child progresses." },
+  { icon: "📚", title: "Vocabulary Levels", text: "Adjust the available vocabulary from basic everyday words to advanced concepts, tenses, and abstract language. Match each student's current level." },
+  { icon: "✏️", title: "Writing Support", text: "Import any image as a writing prompt. Students build sentences describing the image using picture tiles — bridging the gap between visual comprehension and written expression." },
+  { icon: "🌍", title: "Multi-Language", text: "Generate sentences in English, Spanish, and Arabic from the same visual grammar system. The picture-based approach transcends specific languages." },
+  { icon: "🔇", title: "Works Offline", text: "No internet required after download. Use FreeSpeech in a therapy room, a classroom, at home — anywhere." },
+  { icon: "👥", title: "Multiple Profiles", text: "Set up profiles for different students, each with their own vocabulary level, scaffolding settings, and challenge sets." }
+];
+---
+<section class="features section section-light">
+  <div class="container">
+    <h2 class="text-center section-title">Built for therapy sessions. Loved by kids.</h2>
+    
+    <div class="features-grid">
+      {features.map(f => (
+        <div class="feature-card">
+          <div class="feature-icon">{f.icon}</div>
+          <div class="feature-content">
+            <h4>{f.title}</h4>
+            <p>{f.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-title {
+    margin-bottom: var(--spacing-16);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-8);
+  }
+
+  .feature-card {
+    display: flex;
+    gap: var(--spacing-4);
+    background: var(--color-bg-base);
+    padding: var(--spacing-6);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-base);
+  }
+  
+  .feature-card:hover {
+    box-shadow: var(--shadow-sm);
+    border-color: var(--color-primary-light);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .feature-content h4 {
+    margin-bottom: var(--spacing-2);
+    font-size: 1.125rem;
+  }
+
+  .feature-content p {
+    color: var(--color-text-muted);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

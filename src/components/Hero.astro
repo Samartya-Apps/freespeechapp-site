@@ -1,0 +1,126 @@
+---
+// Hero.astro
+---
+
+<section class="hero section">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1>Grammar you can see, touch, and hear.</h1>
+      <p class="subtitle">
+        FreeSpeech is the only app that teaches grammar through pictures.
+        Children drag and drop visual tiles to build sentences — and FreeSpeech
+        converts them into grammatically correct English, spoken aloud. No rules
+        to memorize. No worksheets. Just language, made visible.
+      </p>
+
+      <div class="cta-group">
+        <a
+          href="https://apps.apple.com/in/app/avaz-freespeech/id1047763490"
+          class="btn btn-secondary">Download Free on iOS</a
+        >
+        <a
+          href="https://play.google.com/store/apps/details?id=com.freespeechapp.en"
+          class="btn btn-secondary">Download Free on Android</a
+        >
+      </div>
+      <p class="micro-text">
+        Free to download. Full 14-day trial. No credit card required.
+      </p>
+    </div>
+
+    <div class="hero-visual">
+      <!-- Media placeholder -->
+      <div class="media-placeholder">
+        <div class="media-content">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>Picture Grid Screenshot/Animation Placeholder</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: var(--spacing-16) 0 var(--spacing-24);
+    background-color: var(--color-bg-base);
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-6);
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-8);
+  }
+
+  .cta-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .micro-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+
+  .media-placeholder {
+    aspect-ratio: 4/3;
+    background-color: var(--color-bg-alt);
+    border: 2px dashed var(--color-border);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+  }
+
+  .media-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-4);
+    text-align: center;
+    padding: var(--spacing-4);
+  }
+
+  @media (max-width: 992px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+
+    .cta-group {
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+// Evidence.astro
+---
+<section class="evidence section section-alt">
+  <div class="container text-center">
+    <h2>Trusted by experts. Recognized worldwide.</h2>
+    
+    <div class="badges-row">
+      <div class="badge-item">
+        <span class="badge-icon">🏆</span>
+        <strong>Apple Best New App</strong>
+        <span>Featured on the App Store</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-icon">🎤</span>
+        <strong>TED Talk</strong>
+        <span>1M+ views, translated into 30+ languages</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-icon">🧪</span>
+        <strong>MIT Technology Review TR35</strong>
+        <span>Named top innovator under 35</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-icon">🏅</span>
+        <strong>National Award</strong>
+        <span>From the President of India for disability empowerment</span>
+      </div>
+      <div class="badge-item">
+        <span class="badge-icon">🤝</span>
+        <strong>Used in schools</strong>
+        <span>across the United States and India</span>
+      </div>
+    </div>
+    
+    <div class="evidence-body">
+      <p>
+        FreeSpeech's visual grammar system was developed through original research into how the brain processes language. It has been validated with children with autism and language impairments, and its underlying methodology has been recognized by MIT Technology Review, TED, and the Government of India.
+      </p>
+      <a href="https://samartya.com/research" class="evidence-link" target="_blank" rel="noopener noreferrer">Read more about our research →</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-bottom: var(--spacing-12);
+  }
+
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-8);
+    margin-bottom: var(--spacing-12);
+  }
+
+  .badge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2);
+    max-width: 200px;
+  }
+
+  .badge-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-2);
+  }
+
+  .badge-item strong {
+    color: var(--color-text-main);
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  .badge-item span:not(.badge-icon) {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .evidence-body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .evidence-link {
+    display: inline-block;
+    margin-top: var(--spacing-6);
+    font-weight: 600;
+  }
+</style>

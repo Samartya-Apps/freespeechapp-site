@@ -1,399 +1,105 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import FeatureTabs from '../components/FeatureTabs.astro';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Problem from '../components/Problem.astro';
+import Solution from '../components/Solution.astro';
+import Demo from '../components/Demo.astro';
+import AhaMoment from '../components/AhaMoment.astro';
+import Features from '../components/Features.astro';
+import Audiences from '../components/Audiences.astro';
+import TEDTalk from '../components/TEDTalk.astro';
+import Evidence from '../components/Evidence.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Pricing from '../components/Pricing.astro';
+import Comparison from '../components/Comparison.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<BaseLayout title="Home" description="Avaz FreeSpeech helps children with language disabilities learn English grammar through interactive picture tiles.">
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- Section 1 · Hero                                               -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section
-    id="hero"
-    class="relative flex flex-col items-center justify-center text-center min-h-screen px-6 py-24"
-    aria-labelledby="hero-heading"
-  >
-    <h1
-      id="hero-heading"
-      class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-wider max-w-4xl mx-auto leading-tight"
-      style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-    >
-      Enable Children to Learn the<br class="hidden md:block" />
-      Structure of Grammar Through Play
-    </h1>
-
-    <p
-      class="mt-6 text-xl max-w-xl mx-auto"
-      style="font-family:'Open Sans',sans-serif; color:#555;"
-    >
-      An app that turns their thoughts into accurate sentences
-    </p>
-
-    <!-- Picture-tile mind-map illustration (CSS) -->
-    <div
-      class="relative mt-14 w-full max-w-2xl mx-auto"
-      aria-label="Illustrated mind-map of picture tiles connected to a central sentence"
-      role="img"
-    >
-      <!-- Central sentence tile -->
-      <div
-        class="mx-auto w-fit px-6 py-3 rounded-2xl text-white font-bold text-lg shadow-lg"
-        style="background:#4ECDC4; font-family:'Montserrat',sans-serif;"
-      >
-        The pirate sails to the island
-      </div>
-
-      <!-- Surrounding concept tiles -->
-      <div class="mt-6 flex flex-wrap justify-center gap-3">
-        {[
-          { label: 'The',       bg: '#4ECDC4', fg: '#fff'      },
-          { label: 'pirate',    bg: '#F4A7B9', fg: '#2D2D2D'   },
-          { label: 'sails',     bg: '#4ECDC4', fg: '#fff'      },
-          { label: 'to',        bg: '#F5E682', fg: '#2D2D2D'   },
-          { label: 'the',       bg: '#F5E682', fg: '#2D2D2D'   },
-          { label: 'island',    bg: '#F4A7B9', fg: '#2D2D2D'   },
-          { label: 'ship 🚢',   bg: '#fff',    fg: '#2D2D2D', border: '#4ECDC4' },
-          { label: 'ocean 🌊',  bg: '#fff',    fg: '#2D2D2D', border: '#4ECDC4' },
-          { label: 'adventure', bg: '#fff',    fg: '#2D2D2D', border: '#F4A7B9' },
-        ].map(({ label, bg, fg, border }) => (
-          <span
-            class="px-4 py-2 rounded-xl text-sm font-semibold shadow-sm border-2"
-            style={`background:${bg}; color:${fg}; border-color:${border ?? bg}; font-family:'Open Sans',sans-serif;`}
-          >
-            {label}
-          </span>
-        ))}
-      </div>
-    </div>
-
-    <!-- Scroll-down indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2" aria-hidden="true">
-      <div
-        class="scroll-mouse w-7 h-11 rounded-full border-2 flex items-start justify-center pt-2"
-        style="border-color:#4ECDC4;"
-      >
-        <div class="w-1.5 h-3 rounded-full" style="background:#4ECDC4;"></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- Section 2 · Natural Learning                                   -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section
-    id="natural-learning"
-    class="py-24 px-6"
-    aria-labelledby="natural-heading"
-  >
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2
-          id="natural-heading"
-          class="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4"
-          style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-        >
-          Help Children Learn Language the Most Natural Way
-        </h2>
-        <p class="teal-italic text-lg mb-6">by composing with their thoughts</p>
-        <p class="text-base leading-relaxed" style="color:#555;">
-          FreeSpeech mirrors the way children think — in images and concepts — and scaffolds
-          those visual ideas into grammatically correct written and spoken sentences. Instead
-          of rote drilling, kids explore language by arranging pictures that represent their
-          own world.
-        </p>
-      </div>
-
-      <figure class="rounded-2xl overflow-hidden shadow-xl bg-white">
-        <img
-          src="/images/natural-learning-placeholder.svg"
-          alt="Child reading a book, surrounded by colourful learning icons representing imagination and creativity"
-          width="600"
-          height="400"
-          class="w-full h-auto object-cover"
-          loading="lazy"
-        />
-        <figcaption class="sr-only">
-          Illustration representing a child's natural approach to learning language
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- Section 3 · Common Core Aligned                                -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section
-    id="common-core"
-    class="py-24 px-6"
-    style="background:rgba(78,205,196,0.06);"
-    aria-labelledby="cc-heading"
-  >
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-      <figure class="rounded-2xl overflow-hidden shadow-xl bg-white order-last md:order-first">
-        <img
-          src="/images/common-core-placeholder.svg"
-          alt="A teacher pointing at a chart while students sit attentively at their desks"
-          width="600"
-          height="400"
-          class="w-full h-auto object-cover"
-          loading="lazy"
-        />
-        <figcaption class="sr-only">
-          Illustration of classroom instruction aligned to educational standards
-        </figcaption>
-      </figure>
-
-      <div>
-        <h2
-          id="cc-heading"
-          class="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4"
-          style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-        >
-          Common Core Aligned
-        </h2>
-        <p class="teal-italic text-lg mb-6">
-          Kids get a leg-up on language, speaking and writing requirements
-        </p>
-        <p class="text-base leading-relaxed mb-8" style="color:#555;">
-          Every activity in FreeSpeech maps to specific Common Core Language Arts standards,
-          giving teachers and therapists confidence that the app supports — and doesn't
-          distract from — required learning goals.
-        </p>
-        <a
-          href="/common-core"
-          class="inline-block px-6 py-3 rounded-xl font-semibold text-white transition-opacity hover:opacity-90 focus-visible:opacity-90"
-          style="background:#4ECDC4; font-family:'Montserrat',sans-serif;"
-        >
-          Know More
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- Section 4 · Developed By                                       -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section
-    id="developed-by"
-    class="py-24 px-6"
-    aria-labelledby="team-heading"
-  >
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2
-          id="team-heading"
-          class="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-4"
-          style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-        >
-          Developed By
-        </h2>
-        <p class="text-base leading-relaxed" style="color:#555;">
-          A multidisciplinary team including a Speech-Language Pathologist, educators,
-          academic researchers, and software engineers. This diverse expertise means every
-          decision — from icon design to grammar scaffolding — is grounded in both
-          clinical evidence and classroom reality.
-        </p>
-      </div>
-
-      <figure class="rounded-2xl overflow-hidden shadow-xl bg-white">
-        <img
-          src="/images/team-placeholder.svg"
-          alt="A multidisciplinary team collaborating around a table, viewed from above"
-          width="600"
-          height="400"
-          class="w-full h-auto object-cover"
-          loading="lazy"
-        />
-        <figcaption class="sr-only">
-          Illustration of the FreeSpeech development team
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- Section 5 · TED Talk & Awards                                  -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section
-    id="ted-awards"
-    class="py-24 px-6"
-    style="background:rgba(78,205,196,0.06);"
-    aria-labelledby="ted-heading"
-  >
-    <div class="max-w-4xl mx-auto text-center">
-      <h2
-        id="ted-heading"
-        class="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-8"
-        style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-      >
-        Avaz FreeSpeech as Presented at TED
-      </h2>
-
-      <!-- YouTube embed (placeholder) -->
-      <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl" style="padding-top:56.25%;">
-        <iframe
-          class="absolute inset-0 w-full h-full"
-          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-          title="Avaz FreeSpeech TED Talk"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
-      </div>
-
-      <!-- Awards -->
-      <h3
-        class="text-2xl font-bold uppercase tracking-wide mt-16 mb-10"
-        style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-      >
-        Awards
-      </h3>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        {[
-          {
-            alt:     'Ministry of Social Justice and Empowerment, Government of India',
-            caption: 'Ministry of Social Justice & Empowerment',
-            abbr:    'MoSJE',
-            bg:      '#F5E682',
-          },
-          {
-            alt:     'Massachusetts Institute of Technology (MIT)',
-            caption: 'MIT — Massachusetts Institute of Technology',
-            abbr:    'MIT',
-            bg:      '#F4A7B9',
-          },
-          {
-            alt:     'TED — Ideas Worth Spreading',
-            caption: 'TED — Ideas Worth Spreading',
-            abbr:    'TED',
-            bg:      '#4ECDC4',
-          },
-        ].map(({ alt, caption, abbr, bg }) => (
-          <figure class="flex flex-col items-center gap-3">
-            <div
-              class="w-24 h-24 rounded-full flex items-center justify-center text-2xl font-bold shadow"
-              style={`background:${bg}; font-family:'Montserrat',sans-serif; color:#2D2D2D;`}
-              role="img"
-              aria-label={alt}
-            >
-              {abbr}
-            </div>
-            <figcaption
-              class="text-sm text-center"
-              style="color:#555; font-family:'Open Sans',sans-serif;"
-            >
-              {caption}
-            </figcaption>
-          </figure>
-        ))}
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- Section 6 · Features                                           -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section
-    id="features"
-    class="py-24 px-6"
-    aria-labelledby="features-heading"
-  >
-    <div class="max-w-6xl mx-auto">
-      <h2
-        id="features-heading"
-        class="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-12 text-center"
-        style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-      >
-        Features
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <!-- Tab component -->
-        <div>
-          <FeatureTabs />
+<Layout 
+  title="FreeSpeech — Teach Grammar Through Pictures | Language App for Autism & Special Needs"
+  description="FreeSpeech is the only app that teaches grammar visually. Children drag and drop picture tiles to build sentences — the app handles the grammar automatically. Based on a TED talk with 1M+ views. Used by SLPs and educators. Free to try."
+>
+  <Header />
+  
+  <main>
+    <Hero />
+    <Problem />
+    <Solution />
+    <Demo />
+    <AhaMoment />
+    <Features />
+    <Audiences />
+    <TEDTalk />
+    <Evidence />
+    <Testimonials />
+    <Pricing />
+    <Comparison />
+    
+    <!-- Final CTA Section -->
+    <section id="download" class="final-cta section section-light text-center">
+      <div class="container">
+        <h2 style="font-size: 2.5rem; margin-bottom: var(--spacing-8);">Start building sentences today.</h2>
+        
+        <div class="cta-actions">
+          <a href="https://apps.apple.com/in/app/avaz-freespeech/id1047763490" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download Free on iOS</a>
+          <a href="https://play.google.com/store/apps/details?id=com.freespeechapp.en" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download Free on Android</a>
         </div>
-
-        <!-- iPad mockup placeholder -->
-        <div class="flex flex-col items-center gap-4">
-          <figure class="rounded-3xl overflow-hidden shadow-2xl border-4" style="border-color:#4ECDC4;">
-            <img
-              src="/images/ipad-placeholder.svg"
-              alt="FreeSpeech app shown on an iPad, displaying a sentence being built from picture tiles"
-              width="400"
-              height="550"
-              class="w-full h-auto"
-              loading="lazy"
-            />
-          </figure>
-          <p
-            class="text-sm font-semibold uppercase tracking-wide"
-            style="font-family:'Montserrat',sans-serif; color:#4ECDC4;"
-          >
-            Available for iPad and iPhone
-          </p>
-          <a
-            href="https://twitter.com/avazapp"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sm underline hover:no-underline"
-            style="color:#4ECDC4;"
-          >
-            Follow us on Twitter
-          </a>
+        <p class="micro-text">Free 14-day trial. No credit card required.</p>
+        
+        <div class="secondary-cta">
+          <p>Are you evaluating FreeSpeech for your school or district?</p>
+          <a href="https://samartya.com/for-schools/request-trial" class="text-link" target="_blank" rel="noopener noreferrer">Request a free evaluation with extended access →</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <FAQ />
+  </main>
 
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- Section 7 · CTA                                                -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section
-    id="cta"
-    class="py-24 px-6"
-    style="background:rgba(78,205,196,0.08);"
-    aria-labelledby="cta-heading"
-  >
-    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2
-          id="cta-heading"
-          class="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-6"
-          style="font-family:'Montserrat',sans-serif; color:#2D2D2D;"
-        >
-          Get Hands On Before Making Up Your Mind
-        </h2>
-        <a
-          href="https://apps.apple.com/app/avaz-freespeech/id6474038890"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block px-8 py-4 rounded-xl font-bold text-white text-lg transition-opacity hover:opacity-90"
-          style="background:#4ECDC4; font-family:'Montserrat',sans-serif;"
-        >
-          Start Creating
-        </a>
-      </div>
+  <Footer />
+</Layout>
 
-      <figure class="rounded-3xl overflow-hidden shadow-2xl border-4" style="border-color:#4ECDC4;">
-        <img
-          src="/images/ipad-cta-placeholder.svg"
-          alt="FreeSpeech app interface showing a sentence 'The wonderful pirate goes to her' built from picture tiles"
-          width="500"
-          height="360"
-          class="w-full h-auto"
-          loading="lazy"
-        />
-      </figure>
-    </div>
-  </section>
+<style>
+  .final-cta {
+    padding: var(--spacing-24) 0;
+  }
+  
+  .cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-4);
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-4);
+  }
 
-</BaseLayout>
+  .micro-text {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-12);
+  }
+
+  .secondary-cta {
+    background-color: var(--color-bg-alt);
+    padding: var(--spacing-6);
+    border-radius: var(--border-radius-lg);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .secondary-cta p {
+    margin-bottom: var(--spacing-2);
+    font-weight: 500;
+  }
+
+  .text-link {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .text-link:hover {
+    text-decoration: underline;
+  }
+</style>
