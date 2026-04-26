@@ -1,16 +1,26 @@
 {
-	"main": "dist/_worker.js/index.js",
-	"name": "freespeechapp-site",
+  "main": "dist/_worker.js/index.js",
+  "name": "freespeechapp-site",
   "compatibility_date": "2026-02-21",
   "compatibility_flags": [
     "nodejs_compat",
     "global_fetch_strictly_public"
   ],
-	"assets": {
-		"binding": "ASSETS",
-		"directory": "./dist"
-	},
-	"observability": {
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "observability": {
     "enabled": true
-  }
+  },
+  "routes": [
+    {
+      "pattern": "freespeechapp.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.freespeechapp.com",
+      "custom_domain": true
+    }
+  ]
 }
