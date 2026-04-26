@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "freespeech-site",
+	"name": "freespeechapp-site",
   "compatibility_date": "2026-02-21",
   "compatibility_flags": [
     "nodejs_compat",
